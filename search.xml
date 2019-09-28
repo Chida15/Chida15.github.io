@@ -8,7 +8,7 @@
   <entry>
     <title><![CDATA[如何将hexo博客从Ubuntu下迁移至Mac]]></title>
     <url>%2F2019%2F09%2F28%2F%E5%A6%82%E4%BD%95%E5%B0%86hexo%E5%8D%9A%E5%AE%A2%E4%BB%8EUbuntu%E4%B8%8B%E8%BF%81%E7%A7%BB%E8%87%B3Mac%2F</url>
-    <content type="text"><![CDATA[1.迁移过程1.1 在Mac下安装git并添加公钥具体内容可以百度搜索，不过多赘述。1.2 下载Node.js此处下载1.3 拷贝原来的文件到新电脑中必须拷贝的文件有：_config.yml，theme/，source/，scaffolds/，package.json，.gitignore不需要拷贝的文件有：.git/，node_modules/，public/，.deploy_git/，db.json1.4 安装hexo在安装过程中，由于npm的镜像在国外，所以遇到了一些错误，后来改用淘宝的cnpm才得以解决，以下是方法：install -g cnpm --registry12 1.5 使用cnpm install命令进行模块安装注意不要使用hexo init1.6 安装deployerinstall hexo-generator-git --save12 2.遇到的问题2.1 插件重复安装在node_modules文件夹河package,json文件夹中删除相应的插件2.2 hexo clean使用出错把public中需要编译的内容（比如CNAME文件）移到source文件夹中，然后进行hexo clean。当执行hexo g的时候会重新创建pulic文件夹，复原其中的文件。参考链接1.https://www.zhihu.com/question/21193762/answer/103097754]]></content>
+    <content type="text"><![CDATA[1.迁移过程1.1 在Mac下安装git并添加公钥具体内容可以百度搜索，不过多赘述。1.2 下载Node.js此处下载1.3 拷贝原来的文件到新电脑中必须拷贝的文件有：_config.yml，theme/，source/，scaffolds/，package.json，.gitignore不需要拷贝的文件有：.git/，node_modules/，public/，.deploy_git/，db.json1.4 安装hexo在安装过程中，由于npm的镜像在国外，所以遇到了一些错误，后来改用淘宝的cnpm才得以解决，以下是方法：install -g cnpm --registry12 1.5 使用cnpm install命令进行模块安装注意不要使用hexo init1.6 安装deployerinstall hexo-generator-git --save12 2.遇到的问题2.1 插件重复安装在node_modules文件夹河package,json文件夹中删除相应的插件2.2 hexo clean使用出错把public中需要编译的内容（比如CNAME文件）移到source文件夹中，然后进行hexo clean。当执行hexo g的时候会重新创建pulic文件夹，复原其中的文件。2.3 无法部署新的文章到github上####因为我使用了原来文件中的node_modules，可以删除它再cnmp install 参考链接1.https://www.zhihu.com/question/21193762/answer/103097754]]></content>
       <tags>
         <tag>Solutions</tag>
       </tags>
