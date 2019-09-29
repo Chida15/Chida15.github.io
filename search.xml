@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[test]]></title>
+    <url>%2F2019%2F09%2F29%2Ftest%2F</url>
+    <content type="text"><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[hexo博文中如何添加图片（使用typora）]]></title>
     <url>%2F2019%2F09%2F29%2Fhexo%E5%8D%9A%E6%96%87%E4%B8%AD%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%88%E4%BD%BF%E7%94%A8typora%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[####在Mac下进入Typora的Preferences中 ####点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中 ####结果展示]]></content>
+    <content type="text"><![CDATA[在Mac下进入Typora的Preferences中 点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中 结果展示]]></content>
       <categories>
         <category>Solutions</category>
       </categories>
@@ -14,7 +19,7 @@
   <entry>
     <title><![CDATA[mac终端iTerm2如何进行单词跳跃]]></title>
     <url>%2F2019%2F09%2F29%2Fmac%E7%BB%88%E7%AB%AFiTerm2%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%8D%95%E8%AF%8D%E8%B7%B3%E8%B7%83%2F</url>
-    <content type="text"><![CDATA[###快捷键修改 进入Preferences设置中 进入Profiles下的keys标签页 找到option+←和option+→两个快捷键（这里是已经修改后的） 进行如下修改 iTerm2下的一些快捷键光标移动至行首： ctrl + a光标移动至行位：ctrl + e删除当前行：ctrl + u当前位置开始清除至行尾：ctrl + k]]></content>
+    <content type="text"><![CDATA[快捷键修改进入Preferences设置中 进入Profiles下的keys标签页 找到option+←和option+→两个快捷键（这里是已经修改后的） 进行如下修改 iTerm2下的一些快捷键光标移动至行首： ctrl + a光标移动至行位：ctrl + e删除当前行：ctrl + u当前位置开始清除至行尾：ctrl + k]]></content>
       <categories>
         <category>Solutions</category>
       </categories>
