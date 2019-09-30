@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-29T13:49:09.601Z</updated>
+  <updated>2019-09-30T02:46:20.938Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何给hexo博文加密</title>
+    <link href="http://yoursite.com/2019/09/30/%E5%A6%82%E4%BD%95%E7%BB%99hexo%E5%8D%9A%E6%96%87%E5%8A%A0%E5%AF%86/"/>
+    <id>http://yoursite.com/2019/09/30/如何给hexo博文加密/</id>
+    <published>2019-09-30T02:40:54.000Z</published>
+    <updated>2019-09-30T02:46:20.938Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装hexo插件"><a href="#安装hexo插件" class="headerlink" title="安装hexo插件"></a>安装hexo插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-blog-encrypt --save</span><br></pre></td></tr></table></figure><h3 id="对博客主目录下的-config-yml文件进行如下修改"><a href="#对博客主目录下的-config-yml文件进行如下修改" class="headerlink" title="对博客主目录下的_config.yml文件进行如下修改"></a>对博客主目录下的_config.yml文件进行如下修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">encrypt:</span><br><span class="line">enable: true</span><br></pre></td></tr></table></figure><h3 id="在需要加密的博客的文件头中加入如下字段："><a href="#在需要加密的博客的文件头中加入如下字段：" class="headerlink" title="在需要加密的博客的文件头中加入如下字段："></a>在需要加密的博客的文件头中加入如下字段：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 如何给hexo博文加密</span><br><span class="line">date: 2019-09-30 10:40:54</span><br><span class="line">password: 密码</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;安装hexo插件&quot;&gt;&lt;a href=&quot;#安装hexo插件&quot; class=&quot;headerlink&quot; title=&quot;安装hexo插件&quot;&gt;&lt;/a&gt;安装hexo插件&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>如何在hexo中添加图片（typora）</title>
     <link href="http://yoursite.com/2019/09/29/%E5%A6%82%E4%BD%95%E5%9C%A8hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%88typora%EF%BC%89/"/>
     <id>http://yoursite.com/2019/09/29/如何在hexo中添加图片（typora）/</id>
     <published>2019-09-29T12:22:02.000Z</published>
-    <updated>2019-09-29T13:49:09.601Z</updated>
+    <updated>2019-09-30T02:51:54.457Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="相关设置"><a href="#相关设置" class="headerlink" title="相关设置"></a>相关设置</h3><h4 id="在Mac下进入Typora的Preferences中"><a href="#在Mac下进入Typora的Preferences中" class="headerlink" title="在Mac下进入Typora的Preferences中"></a>在Mac下进入Typora的Preferences中</h4><p><img src="/images/如何在hexo中添加图片（typora）/image-20190929214836639.png" alt="image-20190929214836639" style="zoom:50%;"></p><h4 id="点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中"><a href="#点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中" class="headerlink" title="点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中"></a>点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中</h4><p><img src="/images/如何在hexo中添加图片（typora）/image-20190929214902748.png" alt="image-20190929214902748" style="zoom:50%;"></p><p>####设置图片保存的相对地址为：../../../../source（相对source文件夹的相对地址）</p><h3 id="修改图片的根目录"><a href="#修改图片的根目录" class="headerlink" title="修改图片的根目录"></a>修改图片的根目录</h3><p>####进入博客目录下的scaffolds文件夹中，修改post.md如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 如何在hexo中添加图片（typora）</span><br><span class="line">permalink: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags: </span><br><span class="line">categories: </span><br><span class="line">typora-root-url: ../../../../source # 加入这一行</span><br><span class="line">---</span><br></pre></td></tr></table></figure><h3 id="在博文中插入截图的图片："><a href="#在博文中插入截图的图片：" class="headerlink" title="在博文中插入截图的图片："></a>在博文中插入截图的图片：</h3><p><img src="/images/如何在hexo中添加图片（typora）/image-20190929203119727.png" alt="image-20190929203119727"></p><h4 id="在博文中插入本机图片（无论该文件在哪里，都会自动加入source-images-对应博文名称的文件夹下）："><a href="#在博文中插入本机图片（无论该文件在哪里，都会自动加入source-images-对应博文名称的文件夹下）：" class="headerlink" title="在博文中插入本机图片（无论该文件在哪里，都会自动加入source/images/对应博文名称的文件夹下）："></a>在博文中插入本机图片（无论该文件在哪里，都会自动加入source/images/对应博文名称的文件夹下）：</h4><p><img src="/images/如何在hexo中添加图片（typora）/image-20190929203549657.png" alt="image-20190929203549657"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="相关设置"><a href="#相关设置" class="headerlink" title="相关设置"></a>相关设置</h3><h4 id="在Mac下进入Typora的Preferences中"><a href="#在Mac下进入Typora的Preferences中" class="headerlink" title="在Mac下进入Typora的Preferences中"></a>在Mac下进入Typora的Preferences中</h4><p><img src="/images/如何在hexo中添加图片（typora）/image-20190929214836639.png" alt="image-20190929214836639" style="zoom:50%;"></p><h4 id="点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中"><a href="#点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中" class="headerlink" title="点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中"></a>点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中</h4><p><img src="/images/如何在hexo中添加图片（typora）/image-20190929214902748.png" alt="image-20190929214902748" style="zoom:50%;"></p><h4 id="设置图片保存的相对地址为：-source（相对source文件夹的相对地址）"><a href="#设置图片保存的相对地址为：-source（相对source文件夹的相对地址）" class="headerlink" title="设置图片保存的相对地址为：../../../../source（相对source文件夹的相对地址）"></a>设置图片保存的相对地址为：../../../../source（相对source文件夹的相对地址）</h4><h3 id="修改图片的根目录"><a href="#修改图片的根目录" class="headerlink" title="修改图片的根目录"></a>修改图片的根目录</h3><h4 id="进入博客目录下的scaffolds文件夹中，修改post-md如下："><a href="#进入博客目录下的scaffolds文件夹中，修改post-md如下：" class="headerlink" title="进入博客目录下的scaffolds文件夹中，修改post.md如下："></a>进入博客目录下的scaffolds文件夹中，修改post.md如下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 如何在hexo中添加图片（typora）</span><br><span class="line">permalink: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags: </span><br><span class="line">categories: </span><br><span class="line">typora-root-url: ../../../../source # 加入这一行</span><br><span class="line">---</span><br></pre></td></tr></table></figure><h3 id="在博文中插入截图的图片："><a href="#在博文中插入截图的图片：" class="headerlink" title="在博文中插入截图的图片："></a>在博文中插入截图的图片：</h3><p><img src="/images/如何在hexo中添加图片（typora）/image-20190929203119727.png" alt="image-20190929203119727"></p><h4 id="在博文中插入本机图片（无论该文件在哪里，都会自动加入source-images-对应博文名称的文件夹下）："><a href="#在博文中插入本机图片（无论该文件在哪里，都会自动加入source-images-对应博文名称的文件夹下）：" class="headerlink" title="在博文中插入本机图片（无论该文件在哪里，都会自动加入source/images/对应博文名称的文件夹下）："></a>在博文中插入本机图片（无论该文件在哪里，都会自动加入source/images/对应博文名称的文件夹下）：</h4><p><img src="/images/如何在hexo中添加图片（typora）/image-20190929203549657.png" alt="image-20190929203549657"></p>]]></content>
     
     <summary type="html">
     
