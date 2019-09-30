@@ -18,6 +18,9 @@
       <categories>
         <category>Solutions</category>
       </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[如何在hexo中添加图片（typora）]]></title>
@@ -26,6 +29,9 @@
       <categories>
         <category>Solutions</category>
       </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[mac终端iTerm2如何进行单词跳跃]]></title>
@@ -46,6 +52,9 @@
       <categories>
         <category>Solutions</category>
       </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[如何给hexo博客添加标签]]></title>
@@ -54,6 +63,9 @@
       <categories>
         <category>Solutions</category>
       </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[如何将hexo博客从Ubuntu下迁移至Mac]]></title>
@@ -62,6 +74,9 @@
       <categories>
         <category>Solutions</category>
       </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[如何从零搭建unet网络]]></title>
@@ -90,5 +105,8 @@
       <categories>
         <category>Solutions</category>
       </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
 </search>
