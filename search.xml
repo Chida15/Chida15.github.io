@@ -4,11 +4,23 @@
     <title><![CDATA[如何给hexo博文加密]]></title>
     <url>%2F2019%2F09%2F30%2F%E5%A6%82%E4%BD%95%E7%BB%99hexo%E5%8D%9A%E6%96%87%E5%8A%A0%E5%AF%86%2F</url>
     <content type="text"><![CDATA[安装hexo插件1npm install hexo-blog-encrypt --save 对博客主目录下的_config.yml文件进行如下修改12encrypt: enable: true 在需要加密的博客的文件头中加入如下字段：123title: 如何给hexo博文加密date: 2019-09-30 10:40:54password: 密码]]></content>
+      <categories>
+        <category>Solutions</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[如何在hexo中添加图片（typora）]]></title>
     <url>%2F2019%2F09%2F29%2F%E5%A6%82%E4%BD%95%E5%9C%A8hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%EF%BC%88typora%EF%BC%89%2F</url>
     <content type="text"><![CDATA[相关设置在Mac下进入Typora的Preferences中 点击image选择自定义设置，即可将粘贴在typora的图片自动存放到hexo博文对应的文件夹中 设置图片保存的相对地址为：../../../../source（相对source文件夹的相对地址）修改图片的根目录进入博客目录下的scaffolds文件夹中，修改post.md如下：12345678---title: 如何在hexo中添加图片（typora）permalink: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;tags: categories: typora-root-url: ../../../../source # 加入这一行--- 在博文中插入截图的图片： 在博文中插入本机图片（无论该文件在哪里，都会自动加入source/images/对应博文名称的文件夹下）：]]></content>
+      <categories>
+        <category>Solutions</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[mac终端iTerm2如何进行单词跳跃]]></title>
