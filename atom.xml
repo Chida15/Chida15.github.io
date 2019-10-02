@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-02T03:10:31.117Z</updated>
+  <updated>2019-10-02T08:58:50.398Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mac电脑下如何给终端设置代理</title>
+    <link href="http://yoursite.com/2019/10/02/mac%E7%94%B5%E8%84%91%E4%B8%8B%E5%A6%82%E4%BD%95%E7%BB%99%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/"/>
+    <id>http://yoursite.com/2019/10/02/mac电脑下如何给终端设置代理/</id>
+    <published>2019-10-02T08:34:46.000Z</published>
+    <updated>2019-10-02T08:58:50.398Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Shadowsocks的运行原理"><a href="#Shadowsocks的运行原理" class="headerlink" title="Shadowsocks的运行原理"></a>Shadowsocks的运行原理</h2><p>在服务器端部署完成后，用户根据指定的密码、加密方式、端口等与服务器连接。成功连接之后，客户端会在用户电脑上构建一个本地的Socks5代理。浏览网络时，网络流量会被分到本地Socks5代理，客户端将其加密后发送到服务器，服务器以同样的加密方式将流量回传给客户端，从而实现代理上网。</p><p>Shadowsocks默认在1080端口开启Socks5代理，同时兼容了HTTP代理。</p><p>一些浏览器和软件只支持HTTP代理，而不支持Socks代理，正式因为Shadowsocks同时支持了HTTP代理才能对这些软件进行代理。</p><p>浏览器一般自动启动系统代理，而其他软件则需要自身支持HTTP代理或Socks5代理，并且一般需要手动配置。</p><h2 id="全局模式和PAC模式的区别"><a href="#全局模式和PAC模式的区别" class="headerlink" title="全局模式和PAC模式的区别"></a>全局模式和PAC模式的区别</h2><p>简单来说在全局模式下，所有网站默认走代理，而PAC模式只有被墙的网站才会走代理。</p><h2 id="mac下如何给终端设置代理"><a href="#mac下如何给终端设置代理" class="headerlink" title="mac下如何给终端设置代理"></a>mac下如何给终端设置代理</h2><p>查看代理运行的端口，一般在1086端口</p><p><img src="/images/mac电脑下如何设置代理/image-20191002164842126.png" alt="image-20191002164842126" style="zoom:50%;"></p><p>在~/.zshrc中添加：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias proxy=&quot;export ALL_PROXY=socks5://127.0.0.1:1086&quot;</span><br><span class="line">alias unproxy=&quot;unset ALL_PROXY&quot;</span><br></pre></td></tr></table></figure><p>然后source ~/.zshrc</p><p>用以下命令查看当前的ip所在地</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://ip.cn</span><br></pre></td></tr></table></figure><p><img src="/images/mac电脑下如何给终端设置代理/image-20191002165231116.png" alt="image-20191002165231116"></p><p>再执行以下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">proxy</span><br></pre></td></tr></table></figure><p><img src="/images/mac电脑下如何给终端设置代理/image-20191002165323387.png" alt="image-20191002165323387"></p><p>ip切换到美国</p><p>再执行：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unproxy</span><br></pre></td></tr></table></figure><p><img src="/images/mac电脑下如何给终端设置代理/image-20191002165231116.png" alt="image-20191002165231116"></p><p>地址又回来了。</p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="一些常用的查询公网出口IP的命令"><a href="#一些常用的查询公网出口IP的命令" class="headerlink" title="一些常用的查询公网出口IP的命令"></a>一些常用的查询公网出口IP的命令</h3><p><em>curl ipinfo.io</em></p><p><em>curl <a href="https://ip.cn" target="_blank" rel="noopener">https://ip.cn</a></em></p><p><em>curl cip.cc</em></p><p><em>curl myip.ipip.net</em></p><p>等等</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1.<a href="https://vimcaw.github.io/blog/2017/08/13/ShadowsocksR%E4%BB%A3%E7%90%86%E6%96%B9%E5%BC%8F/(https://vimcaw.github.io/blog/2017/08/13/ShadowsocksR代理方式/)" target="_blank" rel="noopener">Shadowsocks代理方式</a></p><p>2.<a href="https://vimcaw.github.io/blog/2017/08/13/ShadowsocksR%E4%BB%A3%E7%90%86%E6%96%B9%E5%BC%8F/(https://vimcaw.github.io/blog/2017/08/13/ShadowsocksR代理方式/)" target="_blank" rel="noopener"><a href="https://doubibackup.com/4e-hd3iu-2.html" target="_blank" rel="noopener">Shadowsocks（Sock5代理）的PAC模式与全局模式与VPN的区别</a></a></p><p>3.<a href="https://vimcaw.github.io/blog/2017/08/13/ShadowsocksR%E4%BB%A3%E7%90%86%E6%96%B9%E5%BC%8F/(https://vimcaw.github.io/blog/2017/08/13/ShadowsocksR代理方式/)" target="_blank" rel="noopener">OS X 设置终端使用Socks5</a></p><p>4.<a href="https://vimcaw.github.io/blog/2017/08/13/ShadowsocksR%E4%BB%A3%E7%90%86%E6%96%B9%E5%BC%8F/(https://vimcaw.github.io/blog/2017/08/13/ShadowsocksR代理方式/)" target="_blank" rel="noopener">[命令行] curl查询公网出口IP</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Shadowsocks的运行原理&quot;&gt;&lt;a href=&quot;#Shadowsocks的运行原理&quot; class=&quot;headerlink&quot; title=&quot;Shadowsocks的运行原理&quot;&gt;&lt;/a&gt;Shadowsocks的运行原理&lt;/h2&gt;&lt;p&gt;在服务器端部署完成后，用户根
+      
+    
+    </summary>
+    
+      <category term="Solutions" scheme="http://yoursite.com/categories/Solutions/"/>
+    
+    
+      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
+    
+      <category term="Proxy" scheme="http://yoursite.com/tags/Proxy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo在部署时候卡住的原因及解决方案</title>
+    <link href="http://yoursite.com/2019/10/02/hexo%E5%9C%A8%E9%83%A8%E7%BD%B2%E6%97%B6%E5%80%99%E5%8D%A1%E4%BD%8F%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://yoursite.com/2019/10/02/hexo在部署时候卡住的原因及解决方案/</id>
+    <published>2019-10-02T08:10:09.000Z</published>
+    <updated>2019-10-02T09:01:37.497Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>今天用hexo d命令进行部署的时候发现卡了很久一直不能进行。后来发现是因为用了另一个代理的原因。这个代理在1080端口支持的是http代理，而我在_conf.yml设置中用的是ssh地址。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>打开_conf.yml，将</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository:git@github.com:chida15/chida15.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p>修改成</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/Chida15/chida15.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><h2 id="一些思考"><a href="#一些思考" class="headerlink" title="一些思考"></a>一些思考</h2><p>1.http代理和socks代理的区别？</p><p>http代理是基于http协议的代理，一般用于网页，端口通常为80、3128、8080。而socks代理是基于socks协议的一种代理，也叫做全能代理，支持多种协议，包括http、ftp以及其他类型的请求，端口通常为1080.</p><p>2.为什么shadowsocks使用的是http代理，而不是socks代理呢？</p><p>shawdowsocks默认在1080端口开启socks代理，且兼容了http代理，因为一些软件和浏览器不支持socks代理，但支持http代理，所以后者用的比较多。</p><p>具体的可以参考我的另一个博客：<a href="mac电脑下如何设置代理.md">mac电脑下如何设置代理</a></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1.<a href="mac电脑下如何设置代理.md">hexo deploy 命令卡住的奇怪问题</a></p><p>2.<a href="mac电脑下如何设置代理.md">HTTP代理和Socks代理有什么区别</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;今天用hexo d命令进行部署的时候发现卡了很久一直不能进行。后来发现是因为用了另一个代理的原因。这个代理在1080端口支持
+      
+    
+    </summary>
+    
+      <category term="Solutions" scheme="http://yoursite.com/categories/Solutions/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>mac下安装dosbox</title>

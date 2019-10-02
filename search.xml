@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mac电脑下如何给终端设置代理]]></title>
+    <url>%2F2019%2F10%2F02%2Fmac%E7%94%B5%E8%84%91%E4%B8%8B%E5%A6%82%E4%BD%95%E7%BB%99%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%2F</url>
+    <content type="text"><![CDATA[Shadowsocks的运行原理在服务器端部署完成后，用户根据指定的密码、加密方式、端口等与服务器连接。成功连接之后，客户端会在用户电脑上构建一个本地的Socks5代理。浏览网络时，网络流量会被分到本地Socks5代理，客户端将其加密后发送到服务器，服务器以同样的加密方式将流量回传给客户端，从而实现代理上网。 Shadowsocks默认在1080端口开启Socks5代理，同时兼容了HTTP代理。 一些浏览器和软件只支持HTTP代理，而不支持Socks代理，正式因为Shadowsocks同时支持了HTTP代理才能对这些软件进行代理。 浏览器一般自动启动系统代理，而其他软件则需要自身支持HTTP代理或Socks5代理，并且一般需要手动配置。 全局模式和PAC模式的区别简单来说在全局模式下，所有网站默认走代理，而PAC模式只有被墙的网站才会走代理。 mac下如何给终端设置代理查看代理运行的端口，一般在1086端口 在~/.zshrc中添加： 12alias proxy=&quot;export ALL_PROXY=socks5://127.0.0.1:1086&quot;alias unproxy=&quot;unset ALL_PROXY&quot; 然后source ~/.zshrc 用以下命令查看当前的ip所在地 1curl https://ip.cn 再执行以下命令： 1proxy ip切换到美国 再执行： 1unproxy 地址又回来了。 其他一些常用的查询公网出口IP的命令curl ipinfo.io curl https://ip.cn curl cip.cc curl myip.ipip.net 等等 参考1.Shadowsocks代理方式 2.Shadowsocks（Sock5代理）的PAC模式与全局模式与VPN的区别 3.OS X 设置终端使用Socks5 4.[命令行] curl查询公网出口IP]]></content>
+      <categories>
+        <category>Solutions</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>Proxy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo在部署时候卡住的原因及解决方案]]></title>
+    <url>%2F2019%2F10%2F02%2Fhexo%E5%9C%A8%E9%83%A8%E7%BD%B2%E6%97%B6%E5%80%99%E5%8D%A1%E4%BD%8F%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
+    <content type="text"><![CDATA[问题描述今天用hexo d命令进行部署的时候发现卡了很久一直不能进行。后来发现是因为用了另一个代理的原因。这个代理在1080端口支持的是http代理，而我在_conf.yml设置中用的是ssh地址。 解决方法打开_conf.yml，将 1234deploy: type: git repository:git@github.com:chida15/chida15.github.io.git branch: master 修改成 1234deploy: type: git repository: https://github.com/Chida15/chida15.github.io.git branch: master 一些思考1.http代理和socks代理的区别？ http代理是基于http协议的代理，一般用于网页，端口通常为80、3128、8080。而socks代理是基于socks协议的一种代理，也叫做全能代理，支持多种协议，包括http、ftp以及其他类型的请求，端口通常为1080. 2.为什么shadowsocks使用的是http代理，而不是socks代理呢？ shawdowsocks默认在1080端口开启socks代理，且兼容了http代理，因为一些软件和浏览器不支持socks代理，但支持http代理，所以后者用的比较多。 具体的可以参考我的另一个博客：mac电脑下如何设置代理 参考1.hexo deploy 命令卡住的奇怪问题 2.HTTP代理和Socks代理有什么区别]]></content>
+      <categories>
+        <category>Solutions</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mac下安装dosbox]]></title>
     <url>%2F2019%2F10%2F02%2Fmac%E4%B8%8B%E5%AE%89%E8%A3%85dosbox%2F</url>
     <content type="text"><![CDATA[如何安装dosboxdosbox下载汇编开发工具下载创建一个工作目录1mkdir Assembly // 我是在~/MyAcademic/文件夹下创建的 将下载的汇编开发工具移动到该文件夹中 打开dosbox，输入：12mount c ~/myFiles/MyAcademic/Assemblyc: 即可进入创建的文件夹中输入debug，运行debug程序 输入q退出debug dosbox的一些设置mac下dosbox的设置文件在~/Library/Preferences/DOSBox 0.74-3 Preferences （1）自动挂载在设置文件中加入1mount c ~/myFiles/MyAcademic/Assembly // 后面是前面创建的放编译、链接工具的文件夹 （2）改变分辨率在设置文件中加入123456789101112131415161718[sdl]fullscreen=falsefulldouble=falsefullresolution=originalwindowresolution=1024x640 // 可以通过更改这里的分辨率调整大小output=openglautolock=truesensitivity=100waitοnerrοr=truepriority=higher,normalmapperfile=mapper-0.74.mapusescancodes=true[render]frameskip=0aspect=falsescaler=normal2x 注意：将自动挂载设置卸载改变分辨率设置前面，否则会出错。 参考1.https://www.jianshu.com/p/d762644e076b 2.https://blog.csdn.net/My__Code/article/details/79734754 3.https://blog.csdn.net/lvdan1/article/details/72675340]]></content>
