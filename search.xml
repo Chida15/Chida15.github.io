@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[每周诗歌01]]></title>
+    <url>%2F2019%2F10%2F04%2F%E6%AF%8F%E5%91%A8%E8%AF%97%E6%AD%8C01%2F</url>
+    <content type="text"><![CDATA[亲爱的小鱼亲爱的小鱼，我好爱你， 我要喂你面包，你要快快长大， 每一天我都会亲亲你，我答应你，永远都不会忘记。 亲爱的小鱼，你越长越长， 总有一天，再也住不下小鱼缸。 我会带你到海边，让你自由。 尽管你是那么开心的离开。 亲爱的小鱼，我会想你的。 我会在白天一直等你，看你会不会游回来。 我也会在夜里继续等待，希望早点看见你回来。 看到你回来，我会是多么地开心。 我知道你也爱我，我让你自由，你却回来了。]]></content>
+      <categories>
+        <category>Poem</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Adversarial Learning for Semi-Supervised Semantic Segmentation阅读笔记]]></title>
     <url>%2F2019%2F10%2F03%2FAdversarial%20Learning%20for%20Semi-Supervised%20Semantic%20Segmentation%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[CONTRIBUTIONS1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。 2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。 3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。 Details1.通过将Ladv和Lce结合来提高分割精度。 2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground truth辅助分割，从而提高其他的监督信号。 3.使用了两个半监督loss项（Lsem和Ladv）来利用无标注：先用置信图作为监督信号，以自学方式指导Lce(置信图表明了预测分布图中趋于ground truth的分布，即所谓的可靠区域)；使用无标注数据上的Ladv（同有监督中的Ladv），使得无监督数据的分割结果向ground truth靠近。 4.仅用标注数据训练判别网络。 Architecture分割网络采用了带有预训练好的ResNet-101的DeepLab-v2框架。 输入：图像 (H, W, C) 输出：class probability map (H, W, C) 判别网络-输入：class probability map （来自分割网络/one-hot编码后的ground truth） -输出：confidence map (H, W, 1) Training Processing使用标注数据时，分割网络由Lce和Ladv同时监督，判别网络仅使用标注数据训练。 使用无标注数据时，用半监督方式训练分割网络。在获得分割预测后，将其作为判别网络的输入，输出一个置信图，将该置信图作为监督信号，使用自学机制来训练带有masked交叉熵（Lsemi）的分割网络。 Loss Function判别器的Loss 分割器的Loss Lsemi中的I(·)为指示函数，用于将D(S(X_n))结果二值化，当D(S(X_n)) &gt; T_semi时，函数取1，否则取0。 Some Questions1.spatial probability map和confidence map一样吗，前者好像是0/1组成的，后者好像是概率值，然后经过二值化变成了0/1？]]></content>
