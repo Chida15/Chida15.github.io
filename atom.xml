@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-04T01:03:06.549Z</updated>
+  <updated>2019-10-04T01:05:36.983Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/10/03/Adversarial%20Learning%20for%20Semi-Supervised%20Semantic%20Segmentation%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2019/10/03/Adversarial Learning for Semi-Supervised Semantic Segmentation阅读笔记/</id>
     <published>2019-10-03T03:45:23.000Z</published>
-    <updated>2019-10-04T01:03:06.549Z</updated>
+    <updated>2019-10-04T01:05:36.983Z</updated>
     
     <content type="html"><![CDATA[<h1 id="CONTRIBUTIONS"><a href="#CONTRIBUTIONS" class="headerlink" title="CONTRIBUTIONS"></a>CONTRIBUTIONS</h1><p>1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。</p><p>2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。</p><p>3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。</p><h1 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h1><p>1.通过将Ladv和Lce结合来提高分割精度。</p><p>2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground truth辅助分割，从而提高其他的监督信号。</p><p>3.使用了两个半监督loss项（Lsem和Ladv）来利用无标注：先用置信图作为监督信号，以自学方式指导Lce(置信图表明了预测分布图中趋于ground truth的分布，即所谓的可靠区域)；使用无标注数据上的Ladv（同有监督中的Ladv），使得无监督数据的分割结果向ground truth靠近。</p><p>4.仅用标注数据训练判别网络。</p><h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><h3 id="分割网络"><a href="#分割网络" class="headerlink" title="分割网络"></a>分割网络</h3><p>采用了带有预训练好的ResNet-101的DeepLab-v2框架。</p><p>输入：图像 (H, W, C)</p><p>输出：class probability map (H, W, C)</p><h3 id="判别网络"><a href="#判别网络" class="headerlink" title="判别网络"></a>判别网络</h3><p>-输入：class probability map</p><p>（来自分割网络/one-hot编码后的ground truth）</p><p>-输出：confidence map (H, W, 1)</p><h1 id="Training-Processing"><a href="#Training-Processing" class="headerlink" title="Training Processing"></a>Training Processing</h1><p>使用标注数据时，分割网络由Lce和Ladv同时监督，判别网络仅使用标注数据训练。</p><p>使用无标注数据时，用半监督方式训练分割网络。在获得分割预测后，将其作为判别网络的输入，输出一个置信图，将该置信图作为监督信号，使用自学机制来训练带有masked交叉熵（Lsemi）的分割网络。</p><h1 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h1><h3 id="判别器的Loss"><a href="#判别器的Loss" class="headerlink" title="判别器的Loss"></a>判别器的Loss</h3><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown.png" alt="unknown.png" style="zoom:50%;"></p><h3 id="分割器的Loss"><a href="#分割器的Loss" class="headerlink" title="分割器的Loss"></a>分割器的Loss</h3><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150599.png" alt="unknown.png" style="zoom:50%;"></p><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150642.png" alt="unknown.png" style="zoom:50%;"></p><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150645.png" alt="unknown.png" style="zoom:50%;"></p><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150659.png" alt="unknown.png" style="zoom:50%;"></p><p>Lsemi中的I(·)为指示函数，用于将D(S(X_n))结果二值化，当D(S(X_n)) &gt; T_semi时，函数取1，否则取0。</p><h1 id="Some-Questions"><a href="#Some-Questions" class="headerlink" title="Some Questions"></a>Some Questions</h1><p>1.spatial probability map和confidence map一样吗，前者好像是0/1组成的，后者好像是概率值，然后经过二值化变成了0/1？</p>]]></content>
     
