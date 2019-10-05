@@ -89,23 +89,23 @@
 
 
 
-<meta name="description" content="CONTRIBUTIONS1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。 2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。 3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。 Details1.通过将Ladv和Lce结合来提高分割精度。 2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground truth辅助分割，">
+<meta name="description" content="BMVC 2018 CONTRIBUTIONS1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。 2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。 3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。 Details1.通过将Ladv和Lce结合来提高分割精度。 2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground">
 <meta name="keywords" content="Semi-Supervised,Adversarial Learning,Semantic Segmentation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Adversarial Learning for Semi-Supervised Semantic Segmentation阅读笔记">
 <meta property="og:url" content="http://yoursite.com/2019/10/03/Adversarial Learning for Semi-Supervised Semantic Segmentation阅读笔记/index.html">
 <meta property="og:site_name" content="Yevette&#39;s Blog">
-<meta property="og:description" content="CONTRIBUTIONS1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。 2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。 3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。 Details1.通过将Ladv和Lce结合来提高分割精度。 2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground truth辅助分割，">
+<meta property="og:description" content="BMVC 2018 CONTRIBUTIONS1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。 2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。 3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。 Details1.通过将Ladv和Lce结合来提高分割精度。 2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown.png">
 <meta property="og:image" content="http://yoursite.com/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150599.png">
 <meta property="og:image" content="http://yoursite.com/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150642.png">
 <meta property="og:image" content="http://yoursite.com/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150645.png">
 <meta property="og:image" content="http://yoursite.com/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150659.png">
-<meta property="og:updated_time" content="2019-10-04T07:14:35.425Z">
+<meta property="og:updated_time" content="2019-10-05T13:08:35.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Adversarial Learning for Semi-Supervised Semantic Segmentation阅读笔记">
-<meta name="twitter:description" content="CONTRIBUTIONS1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。 2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。 3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。 Details1.通过将Ladv和Lce结合来提高分割精度。 2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground truth辅助分割，">
+<meta name="twitter:description" content="BMVC 2018 CONTRIBUTIONS1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。 2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。 3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。 Details1.通过将Ladv和Lce结合来提高分割精度。 2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground">
 <meta name="twitter:image" content="http://yoursite.com/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown.png">
 
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  527 字
+                  529 字
                 </span>
               
 
@@ -433,7 +433,8 @@
       
 
       
-        <h1 id="CONTRIBUTIONS"><a href="#CONTRIBUTIONS" class="headerlink" title="CONTRIBUTIONS"></a>CONTRIBUTIONS</h1><p>1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。</p>
+        <p><em>BMVC 2018</em></p>
+<h1 id="CONTRIBUTIONS"><a href="#CONTRIBUTIONS" class="headerlink" title="CONTRIBUTIONS"></a>CONTRIBUTIONS</h1><p>1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。</p>
 <p>2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。</p>
 <p>3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。</p>
 <h1 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h1><p>1.通过将Ladv和Lce结合来提高分割精度。</p>
@@ -585,7 +586,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -596,7 +597,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -607,7 +608,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

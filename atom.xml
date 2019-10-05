@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-04T11:24:35.772Z</updated>
+  <updated>2019-10-05T14:06:33.298Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Semi and Weakly Supervised Semantic Segmentation Using Generative Adversarial Network阅读笔记</title>
+    <link href="http://yoursite.com/2019/10/05/Semi%20and%20Weakly%20Supervised%20Semantic%20Segmentation%20Using%20Generative%20Adversarial%20Network%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2019/10/05/Semi and Weakly Supervised Semantic Segmentation Using Generative Adversarial Network阅读笔记/</id>
+    <published>2019-10-05T12:59:18.000Z</published>
+    <updated>2019-10-05T14:06:33.298Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>ICCV 2017</em></p><h1 id="CONTRIBUTIONS"><a href="#CONTRIBUTIONS" class="headerlink" title="CONTRIBUTIONS"></a>CONTRIBUTIONS</h1><p>1.提出了一个GAN网络框架——将传统GAN扩展为像素级预测。</p><p>2.使用半监督方式利用生成的数据和无标注数据来训练网络。</p><p>3.通过采用条件GAN和带有图像级别类标签的数据将方法扩展到弱监督学习上。</p><h1 id="DETAILS"><a href="#DETAILS" class="headerlink" title="DETAILS"></a>DETAILS</h1><p>1.提出了一个半监督框架，包括一个生成网络和判别网络，其中生成网络用于为判别网络提供另外的训练样本，判别网络类似于一个多类分类器，将生成网络生成的样本和真实样本进行分类，如果为生成样本则被分为假类（fake class），若为真实样本，则将其每个像素分为对应的类。（判别器输出k张图像，每张图像对应于一个类别的置信度。例如k=3，第一张图像的第一个像素点处的概率为0.3，即第一个像素属于第0类的概率为0.3，第二张图像的第一个像素点处的概率为0.2，第三章图像的第一个像素点处的概率为0.5，则输入图像第一个像素点属于第2类）。然后最后得到所有像素点属于的类别，即得到一张mask预测图。</p><p>2.使用GAN的基本思想是：加入大量伪造的数据数据迫使真实样本在特征空间中逼近（？？？不太懂，是说找到真实样本之间的相同特征吗），从而实现自下向上的聚类过程，改善多类像素的分类。</p><p>3.半监督的思想是从无标注数据中识别某个特定的隐藏结构p(x)，该结构可以促进带有y类标签的图像的分类。本文的目的是找到一个隐藏数据结构帮助语义分割。</p><p>4.弱标签包括bounding box和image-level labels。</p><p>5.作者发现GAN的使用既能学到隐藏的数据结构，又可以学习到空间物体分布（马路在图像最下面，天空在图像最上面等）。</p><p>6.实验结果发现相比半监督，弱监督的结果中false positives变少了，这是因为，而半监督中的false positives很多都是背景置信度太高导致的，而判别器提高了弱标注图像中出现的标签的置信度（加的图像类标签提高了该类对象的置信度）。</p><h1 id="ARCHITECTURE"><a href="#ARCHITECTURE" class="headerlink" title="ARCHITECTURE"></a>ARCHITECTURE</h1><p>1.生成器（具体的结构略）</p><p>2.判别器：像素分类，同时判别所给图像是来自训练数据（ground truth，包括未标注数据）还是生成数据。</p><h1 id="LOSS"><a href="#LOSS" class="headerlink" title="LOSS"></a>LOSS</h1><h2 id="半监督（使用像素级标签）"><a href="#半监督（使用像素级标签）" class="headerlink" title="半监督（使用像素级标签）"></a>半监督（使用像素级标签）</h2><h3 id="判别器Loss"><a href="#判别器Loss" class="headerlink" title="判别器Loss"></a>判别器Loss</h3><p><img src="/images/Semi-and-Weakly-Supervised-Semantic-Segmentation-Using-Generative-Adversarial-Network阅读笔记/unknown-0282472.png" alt="unknown.png" style="zoom:50%;"></p><p>P(y=fake|x)是指输入图像为生成图像的概率。</p><p>L_D的第一项：为无标注数据设计，目的是降低像素属于假类的概率（？？？没看懂）。</p><p>L_D的第二项：判别器对由标签数据的判别，将其每个像素进行分类，得到mask图后与标签y进行交叉熵。</p><p>L_D的第三项：提高判别器对真实样本和生成样本的判别能力。</p><h3 id="生成器Loss"><a href="#生成器Loss" class="headerlink" title="生成器Loss"></a>生成器Loss</h3><p><img src="/images/Semi-and-Weakly-Supervised-Semantic-Segmentation-Using-Generative-Adversarial-Network阅读笔记/image-20191005214452213.png" alt="image-20191005214452213" style="zoom:50%;"></p><p>同传统GAN。</p><h2 id="弱监督（使用图像级标签）"><a href="#弱监督（使用图像级标签）" class="headerlink" title="弱监督（使用图像级标签）"></a>弱监督（使用图像级标签）</h2><h3 id="判别器Loss（没怎么看懂-）"><a href="#判别器Loss（没怎么看懂-）" class="headerlink" title="判别器Loss（没怎么看懂 ）"></a>判别器Loss（没怎么看懂 ）</h3><p><img src="/images/Semi-and-Weakly-Supervised-Semantic-Segmentation-Using-Generative-Adversarial-Network阅读笔记/image-20191005214644933.png" alt="image-20191005214644933" style="zoom:50%;"></p><p>L_D的第一项：为带弱标注的图像设计</p><p>L_D的第二项：为生成的图像（带弱标注）设计</p><p>L_D的第三项：为带标注的图像设计，</p><p>判别器抑制生成图像属于true类的概率，而提高了弱标注图像中出现的标签的置信度。</p><h3 id="生成器Loss-1"><a href="#生成器Loss-1" class="headerlink" title="生成器Loss"></a>生成器Loss</h3><p>同半监督。</p><h1 id="SOME-QUESTIONS"><a href="#SOME-QUESTIONS" class="headerlink" title="SOME QUESTIONS"></a>SOME QUESTIONS</h1><p>1.做半监督训练时，有标注的图像中没有出现过对象o，但是未标注的图像中出现过。那么在做测试的时候，这个对象o是否会被分割出来？</p><p>2.究竟是怎么识别出那个隐藏数据结构的？生成图像和无标签图像究竟是怎么用的？两者有什么区别？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;em&gt;ICCV 2017&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&quot;CONTRIBUTIONS&quot;&gt;&lt;a href=&quot;#CONTRIBUTIONS&quot; class=&quot;headerlink&quot; title=&quot;CONTRIBUTIONS&quot;&gt;&lt;/a&gt;CONTRIBUTIONS&lt;/h1&gt;&lt;p&gt;
+      
+    
+    </summary>
+    
+      <category term="Theis" scheme="http://yoursite.com/categories/Theis/"/>
+    
+    
+      <category term="Semi-Supervised" scheme="http://yoursite.com/tags/Semi-Supervised/"/>
+    
+      <category term="Weakly-Supervised" scheme="http://yoursite.com/tags/Weakly-Supervised/"/>
+    
+      <category term="Adversarial Learning" scheme="http://yoursite.com/tags/Adversarial-Learning/"/>
+    
+      <category term="Semantic Segmentation" scheme="http://yoursite.com/tags/Semantic-Segmentation/"/>
+    
+  </entry>
   
   <entry>
     <title>每周诗歌01</title>
@@ -46,15 +78,16 @@
     <link href="http://yoursite.com/2019/10/03/Adversarial%20Learning%20for%20Semi-Supervised%20Semantic%20Segmentation%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2019/10/03/Adversarial Learning for Semi-Supervised Semantic Segmentation阅读笔记/</id>
     <published>2019-10-03T03:45:23.000Z</published>
-    <updated>2019-10-04T07:14:35.425Z</updated>
+    <updated>2019-10-05T13:08:35.563Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="CONTRIBUTIONS"><a href="#CONTRIBUTIONS" class="headerlink" title="CONTRIBUTIONS"></a>CONTRIBUTIONS</h1><p>1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。</p><p>2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。</p><p>3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。</p><h1 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h1><p>1.通过将Ladv和Lce结合来提高分割精度。</p><p>2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground truth辅助分割，从而提高其他的监督信号。</p><p>3.使用了两个半监督loss项（Lsem和Ladv）来利用无标注：先用置信图作为监督信号，以自学方式指导Lce(置信图表明了预测分布图中趋于ground truth的分布，即所谓的可靠区域)；使用无标注数据上的Ladv（同有监督中的Ladv），使得无监督数据的分割结果向ground truth靠近。</p><p>4.仅用标注数据训练判别网络。</p><h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><h3 id="分割网络"><a href="#分割网络" class="headerlink" title="分割网络"></a>分割网络</h3><p>采用了带有预训练好的ResNet-101的DeepLab-v2框架。</p><p>输入：图像 (H, W, C)</p><p>输出：class probability map (H, W, C)</p><h3 id="判别网络"><a href="#判别网络" class="headerlink" title="判别网络"></a>判别网络</h3><p>-输入：class probability map</p><p>（来自分割网络/one-hot编码后的ground truth）</p><p>-输出：confidence map (H, W, 1)</p><h1 id="Training-Processing"><a href="#Training-Processing" class="headerlink" title="Training Processing"></a>Training Processing</h1><p>使用标注数据时，分割网络由Lce和Ladv同时监督，判别网络仅使用标注数据训练。</p><p>使用无标注数据时，用半监督方式训练分割网络。在获得分割预测后，将其作为判别网络的输入，输出一个置信图，将该置信图作为监督信号，使用自学机制来训练带有masked交叉熵（Lsemi）的分割网络。</p><h1 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h1><h3 id="判别器的Loss"><a href="#判别器的Loss" class="headerlink" title="判别器的Loss"></a>判别器的Loss</h3><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown.png" alt="unknown.png" style="zoom:50%;"></p><h3 id="分割器的Loss"><a href="#分割器的Loss" class="headerlink" title="分割器的Loss"></a>分割器的Loss</h3><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150599.png" alt="unknown.png" style="zoom:50%;"></p><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150642.png" alt="unknown.png" style="zoom:50%;"></p><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150645.png" alt="unknown.png" style="zoom:50%;"></p><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150659.png" alt="unknown.png" style="zoom:50%;"></p><p>Lsemi中的I(·)为指示函数，用于将D(S(X_n))结果二值化，当D(S(X_n)) &gt; T_semi时，函数取1，否则取0。</p><h1 id="Some-Questions"><a href="#Some-Questions" class="headerlink" title="Some Questions"></a>Some Questions</h1><p>1.spatial probability map和confidence map一样吗，前者好像是0/1组成的，后者好像是概率值，然后经过二值化变成了0/1？</p>]]></content>
+    <content type="html"><![CDATA[<p><em>BMVC 2018</em></p><h1 id="CONTRIBUTIONS"><a href="#CONTRIBUTIONS" class="headerlink" title="CONTRIBUTIONS"></a>CONTRIBUTIONS</h1><p>1.提出了一个对抗框架，提高了分割精度却未增加推断时的计算量。</p><p>2.提出一个半监督框架，证明了可以使用未标注数据提高分割精度。</p><p>3.通过利用判别器发现未标注图像的可靠区域（判别器的输出），从而促进半监督学习。</p><h1 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h1><p>1.通过将Ladv和Lce结合来提高分割精度。</p><p>2.全卷积判别器可通过在无标注数据的分割图像上发现可靠区域，将其当做ground truth辅助分割，从而提高其他的监督信号。</p><p>3.使用了两个半监督loss项（Lsem和Ladv）来利用无标注：先用置信图作为监督信号，以自学方式指导Lce(置信图表明了预测分布图中趋于ground truth的分布，即所谓的可靠区域)；使用无标注数据上的Ladv（同有监督中的Ladv），使得无监督数据的分割结果向ground truth靠近。</p><p>4.仅用标注数据训练判别网络。</p><h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><h3 id="分割网络"><a href="#分割网络" class="headerlink" title="分割网络"></a>分割网络</h3><p>采用了带有预训练好的ResNet-101的DeepLab-v2框架。</p><p>输入：图像 (H, W, C)</p><p>输出：class probability map (H, W, C)</p><h3 id="判别网络"><a href="#判别网络" class="headerlink" title="判别网络"></a>判别网络</h3><p>-输入：class probability map</p><p>（来自分割网络/one-hot编码后的ground truth）</p><p>-输出：confidence map (H, W, 1)</p><h1 id="Training-Processing"><a href="#Training-Processing" class="headerlink" title="Training Processing"></a>Training Processing</h1><p>使用标注数据时，分割网络由Lce和Ladv同时监督，判别网络仅使用标注数据训练。</p><p>使用无标注数据时，用半监督方式训练分割网络。在获得分割预测后，将其作为判别网络的输入，输出一个置信图，将该置信图作为监督信号，使用自学机制来训练带有masked交叉熵（Lsemi）的分割网络。</p><h1 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h1><h3 id="判别器的Loss"><a href="#判别器的Loss" class="headerlink" title="判别器的Loss"></a>判别器的Loss</h3><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown.png" alt="unknown.png" style="zoom:50%;"></p><h3 id="分割器的Loss"><a href="#分割器的Loss" class="headerlink" title="分割器的Loss"></a>分割器的Loss</h3><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150599.png" alt="unknown.png" style="zoom:50%;"></p><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150642.png" alt="unknown.png" style="zoom:50%;"></p><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150645.png" alt="unknown.png" style="zoom:50%;"></p><p><img src="/images/Adversarial-Learning-for-Semi-Supervised-Semantic-Segmentation阅读笔记/unknown-0150659.png" alt="unknown.png" style="zoom:50%;"></p><p>Lsemi中的I(·)为指示函数，用于将D(S(X_n))结果二值化，当D(S(X_n)) &gt; T_semi时，函数取1，否则取0。</p><h1 id="Some-Questions"><a href="#Some-Questions" class="headerlink" title="Some Questions"></a>Some Questions</h1><p>1.spatial probability map和confidence map一样吗，前者好像是0/1组成的，后者好像是概率值，然后经过二值化变成了0/1？</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;CONTRIBUTIONS&quot;&gt;&lt;a href=&quot;#CONTRIBUTIONS&quot; class=&quot;headerlink&quot; title=&quot;CONTRIBUTIONS&quot;&gt;&lt;/a&gt;CONTRIBUTIONS&lt;/h1&gt;&lt;p&gt;1.提出了一个对抗框架，提高了分割精度却未增加推断时
+        &lt;p&gt;&lt;em&gt;BMVC 2018&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&quot;CONTRIBUTIONS&quot;&gt;&lt;a href=&quot;#CONTRIBUTIONS&quot; class=&quot;headerlink&quot; title=&quot;CONTRIBUTIONS&quot;&gt;&lt;/a&gt;CONTRIBUTIONS&lt;/h1&gt;&lt;p&gt;
       
     
     </summary>
