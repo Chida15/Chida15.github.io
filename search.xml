@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Revisiting CycleGAN for semi-supervised segmentation阅读笔记]]></title>
     <url>%2F2019%2F10%2F06%2FRevisiting%20CycleGAN%20for%20semi-supervised%20segmentation%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器 LOSS生成器Loss(训练分割网络) (训练重建网络) 其中 判别器Loss（训练mask判别器） （训练图像判别器） 注意这里的mask是指由ground truth mask和未标注图像分割生成的mask；这里的图像是指ground truth mask重建生成的图像和未标注图像。 循环一致性Loss（未标注图像） （ground truth mask） 因此 CONCLUSION感觉没什么特别的，总体框架和CycleGAN基本一致。]]></content>
       <categories>
         <category>Thesis</category>
       </categories>

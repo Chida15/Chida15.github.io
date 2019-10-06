@@ -89,15 +89,28 @@
 
 
 
+<meta name="description" content="2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器  LOSS生成器Loss(训练分割网络">
 <meta name="keywords" content="Semi-Supervised,Adversarial Learning,Semantic Segmentation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Revisiting CycleGAN for semi-supervised segmentation阅读笔记">
 <meta property="og:url" content="http://yoursite.com/2019/10/06/Revisiting CycleGAN for semi-supervised segmentation阅读笔记/index.html">
 <meta property="og:site_name" content="Yevette&#39;s Blog">
+<meta property="og:description" content="2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器  LOSS生成器Loss(训练分割网络">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-06T10:53:39.245Z">
+<meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191314362.png">
+<meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191422810.png">
+<meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191458953.png">
+<meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191633909.png">
+<meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191732872.png">
+<meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191756663.png">
+<meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006192008326.png">
+<meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006192018577.png">
+<meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006192135076.png">
+<meta property="og:updated_time" content="2019-10-06T11:25:30.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Revisiting CycleGAN for semi-supervised segmentation阅读笔记">
+<meta name="twitter:description" content="2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器  LOSS生成器Loss(训练分割网络">
+<meta name="twitter:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191314362.png">
 
 
 
@@ -387,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  224 字
                 </span>
               
 
@@ -424,7 +437,25 @@
       
 
       
-        
+        <p>2019</p>
+<h1 id="CONTRIBUTIONS"><a href="#CONTRIBUTIONS" class="headerlink" title="CONTRIBUTIONS"></a>CONTRIBUTIONS</h1><p>1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。</p>
+<p>2.在三个挑战分割任务上进行了验证。</p>
+<p>3.进行了消融实验。</p>
+<h1 id="DETAILS"><a href="#DETAILS" class="headerlink" title="DETAILS"></a>DETAILS</h1><p>略</p>
+<h1 id="ARCHITECTURE"><a href="#ARCHITECTURE" class="headerlink" title="ARCHITECTURE"></a>ARCHITECTURE</h1><p>两个条件生成器 + 两个判别器</p>
+<p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191314362.png" alt="image-20191006191314362" style="zoom:50%;"></p>
+<h1 id="LOSS"><a href="#LOSS" class="headerlink" title="LOSS"></a>LOSS</h1><h2 id="生成器Loss"><a href="#生成器Loss" class="headerlink" title="生成器Loss"></a>生成器Loss</h2><p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191422810.png" alt="image-20191006191422810" style="zoom:50%;">(训练分割网络)</p>
+<p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191458953.png" alt="image-20191006191458953" style="zoom:50%;">(训练重建网络)</p>
+<p>其中<img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191633909.png" alt="image-20191006191633909" style="zoom:50%;"></p>
+<h2 id="判别器Loss"><a href="#判别器Loss" class="headerlink" title="判别器Loss"></a>判别器Loss</h2><p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191732872.png" alt="image-20191006191732872" style="zoom:50%;">（训练mask判别器）</p>
+<p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191756663.png" alt="image-20191006191756663" style="zoom:50%;">（训练图像判别器）</p>
+<p>注意这里的mask是指由ground truth mask和未标注图像分割生成的mask；这里的图像是指ground truth mask重建生成的图像和未标注图像。</p>
+<h2 id="循环一致性Loss"><a href="#循环一致性Loss" class="headerlink" title="循环一致性Loss"></a>循环一致性Loss</h2><p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006192008326.png" alt="image-20191006192008326" style="zoom:50%;">（未标注图像）</p>
+<p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006192018577.png" alt="image-20191006192018577" style="zoom:50%;">（ground truth mask）</p>
+<p>因此</p>
+<p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006192135076.png" alt="image-20191006192135076" style="zoom:50%;"></p>
+<h1 id="CONCLUSION"><a href="#CONCLUSION" class="headerlink" title="CONCLUSION"></a>CONCLUSION</h1><p>感觉没什么特别的，总体框架和CycleGAN基本一致。</p>
+
       
     </div>
     
@@ -523,8 +554,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -609,6 +649,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CONTRIBUTIONS"><span class="nav-number">1.</span> <span class="nav-text">CONTRIBUTIONS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DETAILS"><span class="nav-number">2.</span> <span class="nav-text">DETAILS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARCHITECTURE"><span class="nav-number">3.</span> <span class="nav-text">ARCHITECTURE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LOSS"><span class="nav-number">4.</span> <span class="nav-text">LOSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成器Loss"><span class="nav-number">4.1.</span> <span class="nav-text">生成器Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判别器Loss"><span class="nav-number">4.2.</span> <span class="nav-text">判别器Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环一致性Loss"><span class="nav-number">4.3.</span> <span class="nav-text">循环一致性Loss</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CONCLUSION"><span class="nav-number">5.</span> <span class="nav-text">CONCLUSION</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
