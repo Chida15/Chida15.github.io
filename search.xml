@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Revisiting CycleGAN for semi-supervised segmentation阅读笔记]]></title>
+    <url>%2F2019%2F10%2F06%2FRevisiting%20CycleGAN%20for%20semi-supervised%20segmentation%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Thesis</category>
+      </categories>
+      <tags>
+        <tag>Semi-Supervised</tag>
+        <tag>Adversarial Learning</tag>
+        <tag>Semantic Segmentation</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Semi and Weakly Supervised Semantic Segmentation Using Generative Adversarial Network阅读笔记]]></title>
     <url>%2F2019%2F10%2F05%2FSemi%20and%20Weakly%20Supervised%20Semantic%20Segmentation%20Using%20Generative%20Adversarial%20Network%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[ICCV 2017 CONTRIBUTIONS1.提出了一个GAN网络框架——将传统GAN扩展为像素级预测。 2.使用半监督方式利用生成的数据和无标注数据来训练网络。 3.通过采用条件GAN和带有图像级别类标签的数据将方法扩展到弱监督学习上。 DETAILS1.提出了一个半监督框架，包括一个生成网络和判别网络，其中生成网络用于为判别网络提供另外的训练样本，判别网络类似于一个多类分类器，将生成网络生成的样本和真实样本进行分类，如果为生成样本则被分为假类（fake class），若为真实样本，则将其每个像素分为对应的类。（判别器输出k张图像，每张图像对应于一个类别的置信度。例如k=3，第一张图像的第一个像素点处的概率为0.3，即第一个像素属于第0类的概率为0.3，第二张图像的第一个像素点处的概率为0.2，第三章图像的第一个像素点处的概率为0.5，则输入图像第一个像素点属于第2类）。然后最后得到所有像素点属于的类别，即得到一张mask预测图。 2.使用GAN的基本思想是：加入大量伪造的数据数据迫使真实样本在特征空间中逼近（？？？不太懂，是说找到真实样本之间的相同特征吗），从而实现自下向上的聚类过程，改善多类像素的分类。 3.半监督的思想是从无标注数据中识别某个特定的隐藏结构p(x)，该结构可以促进带有y类标签的图像的分类。本文的目的是找到一个隐藏数据结构帮助语义分割。 4.弱标签包括bounding box和image-level labels。 5.作者发现GAN的使用既能学到隐藏的数据结构，又可以学习到空间物体分布（马路在图像最下面，天空在图像最上面等）。 6.实验结果发现相比半监督，弱监督的结果中false positives变少了，这是因为，而半监督中的false positives很多都是背景置信度太高导致的，而判别器提高了弱标注图像中出现的标签的置信度（加的图像类标签提高了该类对象的置信度）。 ARCHITECTURE1.生成器（具体的结构略） 2.判别器：像素分类，同时判别所给图像是来自训练数据（ground truth，包括未标注数据）还是生成数据。 LOSS半监督（使用像素级标签）判别器Loss P(y=fake|x)是指输入图像为生成图像的概率。 L_D的第一项：为无标注数据设计，目的是降低像素属于假类的概率（？？？没看懂）。 L_D的第二项：判别器对由标签数据的判别，将其每个像素进行分类，得到mask图后与标签y进行交叉熵。 L_D的第三项：提高判别器对真实样本和生成样本的判别能力。 生成器Loss 同传统GAN。 弱监督（使用图像级标签）判别器Loss（没怎么看懂 ） L_D的第一项：为带弱标注的图像设计 L_D的第二项：为生成的图像（带弱标注）设计 L_D的第三项：为带标注的图像设计， 判别器抑制生成图像属于true类的概率，而提高了弱标注图像中出现的标签的置信度。 生成器Loss同半监督。 SOME QUESTIONS1.做半监督训练时，有标注的图像中没有出现过对象o，但是未标注的图像中出现过。那么在做测试的时候，这个对象o是否会被分割出来？ 2.究竟是怎么识别出那个隐藏数据结构的？生成图像和无标签图像究竟是怎么用的？两者有什么区别？]]></content>
       <categories>
-        <category>Theis</category>
+        <category>Thesis</category>
       </categories>
       <tags>
         <tag>Semi-Supervised</tag>
-        <tag>Weakly-Supervised</tag>
         <tag>Adversarial Learning</tag>
         <tag>Semantic Segmentation</tag>
+        <tag>Weakly-Supervised</tag>
       </tags>
   </entry>
   <entry>
