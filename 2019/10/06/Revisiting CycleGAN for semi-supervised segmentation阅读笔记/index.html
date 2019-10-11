@@ -89,13 +89,13 @@
 
 
 
-<meta name="description" content="2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器  LOSS生成器Loss(训练分割网络">
+<meta name="description" content="2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器  ​               LO">
 <meta name="keywords" content="Semi-Supervised,Adversarial Learning,Semantic Segmentation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Revisiting CycleGAN for semi-supervised segmentation阅读笔记">
 <meta property="og:url" content="http://yoursite.com/2019/10/06/Revisiting CycleGAN for semi-supervised segmentation阅读笔记/index.html">
 <meta property="og:site_name" content="Yevette&#39;s Blog">
-<meta property="og:description" content="2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器  LOSS生成器Loss(训练分割网络">
+<meta property="og:description" content="2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器  ​               LO">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191314362.png">
 <meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191422810.png">
@@ -106,10 +106,10 @@
 <meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006192008326.png">
 <meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006192018577.png">
 <meta property="og:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006192135076.png">
-<meta property="og:updated_time" content="2019-10-06T11:25:30.092Z">
+<meta property="og:updated_time" content="2019-10-09T15:42:32.273Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Revisiting CycleGAN for semi-supervised segmentation阅读笔记">
-<meta name="twitter:description" content="2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器  LOSS生成器Loss(训练分割网络">
+<meta name="twitter:description" content="2019 CONTRIBUTIONS1.这是第一个使用CycleGAN来学习无标注图像和ground truth mask之间的循环一致性映射的半监督分割方法。提出的方法作为一种无监督正则项，当标签数据不足时可以提高分割性能。 2.在三个挑战分割任务上进行了验证。 3.进行了消融实验。 DETAILS略 ARCHITECTURE两个条件生成器 + 两个判别器  ​               LO">
 <meta name="twitter:image" content="http://yoursite.com/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191314362.png">
 
 
@@ -444,6 +444,7 @@
 <h1 id="DETAILS"><a href="#DETAILS" class="headerlink" title="DETAILS"></a>DETAILS</h1><p>略</p>
 <h1 id="ARCHITECTURE"><a href="#ARCHITECTURE" class="headerlink" title="ARCHITECTURE"></a>ARCHITECTURE</h1><p>两个条件生成器 + 两个判别器</p>
 <p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191314362.png" alt="image-20191006191314362" style="zoom:50%;"></p>
+<p>​              </p>
 <h1 id="LOSS"><a href="#LOSS" class="headerlink" title="LOSS"></a>LOSS</h1><h2 id="生成器Loss"><a href="#生成器Loss" class="headerlink" title="生成器Loss"></a>生成器Loss</h2><p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191422810.png" alt="image-20191006191422810" style="zoom:50%;">(训练分割网络)</p>
 <p><img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191458953.png" alt="image-20191006191458953" style="zoom:50%;">(训练重建网络)</p>
 <p>其中<img src="/images/Revisiting-CycleGAN-for-semi-supervised-segmentation阅读笔记/image-20191006191633909.png" alt="image-20191006191633909" style="zoom:50%;"></p>
@@ -585,7 +586,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -607,7 +608,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
