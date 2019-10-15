@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mac下如何修改单个程序的默认语言]]></title>
+    <url>%2F2019%2F10%2F15%2Fmac%E4%B8%8B%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%BB%98%E8%AE%A4%E8%AF%AD%E8%A8%80%2F</url>
+    <content type="text"><![CDATA[永久修改获取App的Bundle IndentifierBundle Indentifier是mac下应用软件的标识，以MarginNote3为例： 1mdls -name kMDItemCFBundleIdentifier /Applications/MarginNote\ 3.app 得到结果如下： 1kMDItemCFBundleIdentifier = &quot;QReader.MarginStudyMac&quot; 修改应用程序默认语言1defaults write QReader.MarginStudyMac AppleLanguages &apos;(&quot;zh_CN&quot;)&apos; 如果要改成繁体，可以使用zh_TW（Chinese Taiwan） 临时修改使用参数-AppleLanguages可以 1open -a /Applications/Safari.app --args -AppleLanguages &apos;(zh-CN)&apos; 其他查找一个应用支持的界面语言1.Finder中找到该应用，右键显示包内容，然后查看/Contents/Resources目录下以.lproj结尾的语言文件目录。 2.使用终端查看： 参考链接Mac修改单个应用程序默认语言 如何临时修改 macOS 应用的界面语言]]></content>
+      <categories>
+        <category>Solutions</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何通过PyCharm远程连接服务器]]></title>
     <url>%2F2019%2F10%2F11%2F%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87PyCharm%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
     <content type="text"><![CDATA[部署1.打开tools中，打开deployment中的configuration 2.如下填写 3.这个操作会在编译的时候将本地路径映射为服务器上指定路径（注意部署路径是相对地址，前面要加一个/，表示前面设置的工作路径） Excluded Paths用来设置一些不想同步的文件夹 远程python解释器配置1.点击Preferences（mac系统下，windows系统下应该是File &gt; Settings） 2.点击Project Interpreter 3.点击add 4.选择SSH Interpreter 5.输入密码 6. 其他如何使用1.首先在Pycharm中创建一个工作目录（路径和上面同步的路径一样）。 2.点击tools中deployment下的browse remote host 3.可以选择对应的目录右击选择“Download from here”，将文件下载到本地（或者在） 注意：只有上面设置了同步的文件夹才能下载到本地 4.远程连接服务器终端 5.在本地项目文件夹中修改代码，按command + s保存（ctrl + s）后，自动同步到远程服务器上，然后再在远程服务器的终端上提交相应的脚本（或者直接在本地运行，这时候使用的是远程服务器下的python解释器） 注意：如果在Remote Host中修改代码后，还需要Download到本地，而且在Remote Host上修改代码的时候不能直接执行代码，所以最好还是在本地修改代码后，自动上传到服务器比较方便。 同步更新（本地到服务器）可以在tools的deployment下的option中进行设置 第一个表示自动同步，第二个表示command + s保存的时候进行同步，第三个表示永远不同步。 tips1.如果终端进行了某种操作而Remote Host上未同步的话，可以点击刷新按钮。 2.如果要进行debug的话，就跟在本地的debug一样。 一些疑问：1.在远程服务器的改动是否能自动同步到本地，而不使用download？ 2.部署中的文件夹和配置python解释器中的文件夹有什么不同？ 参考1.PyCharm 配置远程python解释器和在本地修改服务器代码 2.教程 | 使用 PyCharm 连接服务器进行远程开发和调试]]></content>
@@ -44,9 +55,9 @@
       </categories>
       <tags>
         <tag>Semi-Supervised</tag>
-        <tag>Weakly-Supervised</tag>
         <tag>Adversarial Learning</tag>
         <tag>Semantic Segmentation</tag>
+        <tag>Weakly-Supervised</tag>
       </tags>
   </entry>
   <entry>
@@ -101,6 +112,7 @@
         <category>Solutions</category>
       </categories>
       <tags>
+        <tag>Mac</tag>
         <tag>Assembly Language</tag>
       </tags>
   </entry>
