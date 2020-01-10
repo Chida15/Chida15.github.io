@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mac下vscode环境配置]]></title>
+    <url>%2F2020%2F01%2F10%2Fmac%E4%B8%8Bvscode%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[一、官网下载VS code二、配置环境只要下载一个c/c++和code runner就行了（具体过程忘了，可详见下面的参考文献）ctrl+option+n是运行代码F5是调试 四、问题1.Could not find the task ‘clang++ build active file’.解决方法：应该用clang++而不是clang的配置文件 三、参考文献1.MAC visual Studio Code 运行 调试c/c++ 配置（完美解决） 2.用vscode调试时,使用调试控制台而不是集成的终端 3.vs code中如何强制捕获输出到调试控制台]]></content>
+      <categories>
+        <category>Solutions</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>VScode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[无线局域网WLAN]]></title>
+    <url>%2F2019%2F10%2F25%2F%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91WLAN%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Subjects</category>
+      </categories>
+      <tags>
+        <tag>Computer Networking</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mac下如何修改单个程序的默认语言]]></title>
     <url>%2F2019%2F10%2F15%2Fmac%E4%B8%8B%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%8D%95%E4%B8%AA%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%BB%98%E8%AE%A4%E8%AF%AD%E8%A8%80%2F</url>
     <content type="text"><![CDATA[永久修改获取App的Bundle IndentifierBundle Indentifier是mac下应用软件的标识，以MarginNote3为例： 1mdls -name kMDItemCFBundleIdentifier /Applications/MarginNote\ 3.app 得到结果如下： 1kMDItemCFBundleIdentifier = &quot;QReader.MarginStudyMac&quot; 修改应用程序默认语言1defaults write QReader.MarginStudyMac AppleLanguages &apos;(&quot;zh_CN&quot;)&apos; 如果要改成繁体，可以使用zh_TW（Chinese Taiwan） 临时修改使用参数-AppleLanguages可以 1open -a /Applications/Safari.app --args -AppleLanguages &apos;(zh-CN)&apos; 其他查找一个应用支持的界面语言1.Finder中找到该应用，右键显示包内容，然后查看/Contents/Resources目录下以.lproj结尾的语言文件目录。 2.使用终端查看： 参考链接Mac修改单个应用程序默认语言 如何临时修改 macOS 应用的界面语言]]></content>
@@ -55,9 +78,9 @@
       </categories>
       <tags>
         <tag>Semi-Supervised</tag>
+        <tag>Weakly-Supervised</tag>
         <tag>Adversarial Learning</tag>
         <tag>Semantic Segmentation</tag>
-        <tag>Weakly-Supervised</tag>
       </tags>
   </entry>
   <entry>
