@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[算法训练2020/01/10]]></title>
+    <url>%2F2020%2F01%2F10%2F%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%832020%2F01%2F10%2F</url>
+    <content type="text"><![CDATA[Sort头文件 \用法：-升序sort(buff, buff+n)-降序sort(buff, buff+n, cmp)123bool cmp(int x, int y)&#123; return x &gt; y; // 如果结果为true，则第一个参数排在第二个参数前面&#125; -对结构体进行排序-方法1：使用cmp1234567891011bool cmp(student x, student y)&#123; if(x.score != y.score)&#123; return x.score &lt; y.score; &#125; if(x.name != y.name)&#123; return x.name &lt; y.name; &#125; else&#123; return x.age &lt; y.age; &#125;&#125; -方法2：直接定义结构体的小于运算符（只有就只要用sort(buf, buf+n)）1234567891011struct student&#123; string name; int age; int score; bool operator &lt; (const student &amp;b) const&#123; // 后面那个const表示该成员函数不修改类成员的值 if(score != b.score) return score &lt; b.score; if(name != b.name) return name &lt; b.name; else return age &lt; b.age; &#125;&#125;;]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Sort</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mac下vscode环境配置]]></title>
     <url>%2F2020%2F01%2F10%2Fmac%E4%B8%8Bvscode%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[一、官网下载VS code二、配置环境只要下载一个c/c++和code runner就行了（具体过程忘了，可详见下面的参考文献）ctrl+option+n是运行代码F5是调试 四、问题1.Could not find the task ‘clang++ build active file’.解决方法：应该用clang++而不是clang的配置文件 三、参考文献1.MAC visual Studio Code 运行 调试c/c++ 配置（完美解决） 2.用vscode调试时,使用调试控制台而不是集成的终端 3.vs code中如何强制捕获输出到调试控制台]]></content>
+    <content type="text"><![CDATA[一、官网下载VS code二、配置环境1.只要下载一个c/c++和code runner就行了（具体过程忘了，可详见下面的参考文献）ctrl+option+n是运行代码F5是调试 2.快速生成头部注释和函数注释安装koroFileHeader，然后对setttings.json进行配置（shift+cmd+p然后输入settings即可找到），配置如下： 四、问题1.Could not find the task ‘clang++ build active file’.解决方法：应该用clang++而不是clang的配置文件三、参考文献1.MAC visual Studio Code 运行 调试c/c++ 配置（完美解决） 2.用vscode调试时,使用调试控制台而不是集成的终端 3.vs code中如何强制捕获输出到调试控制台]]></content>
       <categories>
         <category>Solutions</category>
       </categories>
